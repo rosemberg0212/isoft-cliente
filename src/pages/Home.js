@@ -1,16 +1,14 @@
-import React, { useContext, useEffect } from 'react'
-import AuthContext from '../context/auth/authContext'
+import React, { useEffect } from 'react'
+import {useAuth} from '../context/auth/authContext'
 
 const Home = () => {
-    const authContext = useContext(AuthContext);
-    const {usuarioAutenticado} = authContext;
+  const { usuarioAutenticado } = useAuth()
 
-    useEffect(()=>{
-        usuarioAutenticado()
-    }, [ ])
-    return (
-    <div>Home</div>
-    )
+  useEffect(() => {
+    usuarioAutenticado()
+  }, [usuarioAutenticado])
+    
+  return <div>Home</div>
 }
 
 export default Home

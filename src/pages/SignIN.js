@@ -2,11 +2,11 @@ import React from 'react'
 import SignIn from '../components/auth/SignIn'
 
 const Sign_in = () => {
-    return (
+  return (
     <div>
-        <SignIn/>
+      <SignIn />
     </div>
-    )
+  )
 }
 
 export default Sign_in
