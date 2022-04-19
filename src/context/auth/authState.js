@@ -4,12 +4,12 @@ import AuthReducer from './authReducer';
 import axios from 'axios';
 
 import {
-	REGISTRO_EXITOSO,
-	REGISTRO_ERROR,
+	// REGISTRO_EXITOSO,
+	// REGISTRO_ERROR,
 	OBTENER_USUARIO,
 	LOGIN_EXITOSO,
 	LOGIN_ERROR,
-	CERRAR_SESION
+	// CERRAR_SESION
 } from '../../types';
 
 const AuthState = props =>{

@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/auth/authContext';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const SignIn = (props) => {
+const SignIn = () => {
 
     const authContext = useContext(AuthContext);
     const {autenticado, mensaje, iniciarSesion} = authContext;
@@ -13,7 +14,16 @@ const SignIn = (props) => {
         if(autenticado){
             navigate('/'); 
         }
-    }, [ autenticado])
+
+        if(mensaje){
+            Swal.fire({
+                icon: 'error',
+                title: 'Correo o contraseña incorrectos',
+                showConfirmButton: false,
+                timer: 1800
+            })
+        }
+    }, [ autenticado, mensaje, navigate])
 
     const [usur, guardarUsuario] = useState({
         correo: '',
