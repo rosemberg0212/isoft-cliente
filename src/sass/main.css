@@ -42,4 +42,102 @@
   height: 35px;
   border: none;
   border-radius: 8px;
-} /*# sourceMappingURL=main.css.map */
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111111;
+  padding: 15px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.navbar .logo {
+  margin-right: 50px;
+  margin-left: 5%;
+  color: #ffffff;
+}
+.navbar .menu {
+  margin-right: 5%;
+}
+.navbar .menu .list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.navbar #toggler, .navbar label {
+  display: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 655px) {
+  .navbar .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .navbar .menu .list {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .navbar #toggler:checked ~ .menu {
+    max-height: 100%;
+  }
+}
+.content_citas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.content_citas .reservas {
+  padding: 10px;
+}
+.content_citas .reservas .title {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.content_citas .reservas .orga {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.content_citas .reservas select {
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border-color: #b3b3b3;
+}
+.content_citas .reservas input {
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: solid 1px #b3b3b3;
+}
+.content_citas .reservas .envi {
+  width: 90px;
+  border: none;
+  background-color: #111111;
+  color: #ffffff;
+}
+.content_citas .mapa .ubica {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.leaflet-container {
+  width: 400px;
+  height: 350px;
+}/*# sourceMappingURL=main.css.map */

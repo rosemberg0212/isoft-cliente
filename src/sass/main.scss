@@ -4,4 +4,11 @@
   box-sizing: border-box;
 }
 
+$gris: #b3b3b3;
+$black: #111111;
+$white: #ffffff;
+
 @import 'signIn';
+@import 'navbar';
+@import 'citas';
+@import 'mapView';

@@ -41,7 +41,12 @@ const SignIn = () => {
     e.preventDefault()
 
     if (correo.trim() === '' || password.trim() === '') {
-      console.log('error')
+      Swal.fire({
+        icon: 'error',
+        title: 'Todos los campos son obligatorios',
+        showConfirmButton: false,
+        timer: 1800
+      })
       return
     }
 

@@ -1,0 +1,51 @@
+.content_citas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .reservas{
+        padding: 10px;
+        .title{
+            font-size: 1.5rem;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .orga{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        select{
+            height: 40px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border-color: $gris;
+        }
+
+        input{
+            height: 40px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: solid 1px $gris;
+        }
+
+        .envi{
+            width: 90px;
+            border: none;
+            background-color: $black;
+            color: #ffffff;
+        }
+
+        
+    }
+
+    .mapa{
+        .ubica{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    }
+}
