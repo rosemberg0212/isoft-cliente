@@ -9,7 +9,7 @@ import {
   OBTENER_USUARIO,
   LOGIN_EXITOSO,
   LOGIN_ERROR,
-  // CERRAR_SESION
+  CERRAR_SESION
 } from '../../types'
 
 
@@ -95,9 +95,9 @@ const AuthState = (props) => {
   }, [usuarioAutenticado])
 
   const cerrarSesion = useCallback(() => {
-    // dispatch({
-    // 	type: CERRAR_SESION
-    // })
+    dispatch({
+    	type: CERRAR_SESION
+    })
   }, [])
 
   const {token, usuario, mensaje, autenticado} = state
