@@ -1,0 +1,21 @@
+.content-adm{
+    display: flex;
+    .sidebar{
+        width: 14rem;
+        height: 100vh;
+        border-right: 1px solid gray;
+    }
+    ul{
+        list-style: none;
+        padding: 1rem 2rem; 
+
+        li{
+            margin-bottom: 1rem;
+
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+
+}

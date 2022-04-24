@@ -140,4 +140,23 @@
 .leaflet-container {
   width: 400px;
   height: 350px;
+}
+
+.content-adm {
+  display: flex;
+}
+.content-adm .sidebar {
+  width: 14rem;
+  height: 100vh;
+  border-right: 1px solid gray;
+}
+.content-adm ul {
+  list-style: none;
+  padding: 1rem 2rem;
+}
+.content-adm ul li {
+  margin-bottom: 1rem;
+}
+.content-adm ul li a {
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */

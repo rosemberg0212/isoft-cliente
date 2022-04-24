@@ -4,9 +4,9 @@ import CitasReducer from './citasReducer'
 import axios from 'axios'
 
 import {
-    ELIMINAR_CITA,
+    // ELIMINAR_CITA,
     AGREGAR_CITA,
-    ACTULIZAR_CITA,
+    // ACTULIZAR_CITA,
     OBTENER_CITA,
     AGREGAR_CITA_ERROR
 } from '../../types'

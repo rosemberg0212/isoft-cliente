@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import MapView from '../maps/MapView'
 import {useCitas} from '../../context/citas/citasContext'
 import Swal from 'sweetalert2'
+import DatePicker,{registerLocale} from 'react-datepicker'
+import es from 'date-fns/locale/es';
+import "react-datepicker/dist/react-datepicker.css";
 
 const Citas = () => {
 
@@ -9,26 +12,29 @@ const Citas = () => {
 
     useEffect(() => {
      obtenerCitas()
-
-     if(mensaje){
-        Swal.fire({
-            icon: 'error',
-            title: 'Debe iniciar sesion primero',
-            showConfirmButton: false,
-            timer: 1800
-          })
-     }
-    }, [mensaje])
+        
+    }, [obtenerCitas])
     
-
-    const fechaA = new Date();
 
     const [reservas, guardarReserva] = useState({
         servicio: '',
         ubicacion: '',
-        fecha: '',
+        fecha: null,
         comentarios: ''
     })
+
+    //state para la fecha
+    const [startDate, setStartDate] = useState(null);
+   
+    const isWeekday = (date) => {
+        const day = date.getDay();
+        return day !== 0 && day !== 6;
+      };
+    registerLocale('es', es)
+
+    const onDate = (date, e)=>{
+        setStartDate(date,e)
+    }
     
     const {servicio, ubicacion, fecha, comentarios} = reservas;
 
@@ -36,16 +42,27 @@ const Citas = () => {
         guardarReserva({
             ...reservas,
             [e.target.name]: e.target.value
-        })
+        });
     }
-
+    
+    
     const onSubmit = (e)=>{
         e.preventDefault();
+
+        if(mensaje){
+            Swal.fire({
+                icon: 'error',
+                title: 'Debe iniciar sesion primero',
+                showConfirmButton: true,
+                // timer: 1800
+              })
+            return
+        }
 
         crearCita({
             servicio,
             ubicacion,
-            fecha,
+            fecha: startDate,
             comentarios
         })
     }
@@ -76,17 +93,27 @@ const Citas = () => {
 
                 <div className='fecha orga'>
                     <label>Fecha y Hora para el servicio (*)</label>
-                    <input 
+                    {/* <input 
                         type='datetime-local' 
                         className='campoF' 
                         min={fechaA} 
                         name='fecha'
                         value={fecha}
                         onChange={onChange}
-                    />
+                    /> */}
+                    <DatePicker 
+                        selected={startDate}
+                        name='fecha'
+                        value={fecha}
+                        onSelect={onDate}
+                        minDate={new Date()}
+                        locale='es'
+                        filterDate={isWeekday}
+                        showDisabledMonthNavigation
+                        />
                 </div>
 
-                <div className='fecha orga'>
+                <div className='comenta orga'>
                     <label>Comentario</label>
                     <input 
                         type='text' 
