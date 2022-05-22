@@ -2,13 +2,14 @@ import React, { useReducer, useCallback } from 'react'
 import CitasContext from './citasContext'
 import CitasReducer from './citasReducer'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 import {
     // ELIMINAR_CITA,
     AGREGAR_CITA,
     // ACTULIZAR_CITA,
     OBTENER_CITA,
-    AGREGAR_CITA_ERROR
+    // AGREGAR_CITA_ERROR
 } from '../../types'
 
 const getToken = () => localStorage.getItem('token')
@@ -26,25 +27,38 @@ const CitaState = (props) => {
     const token = getToken()
 		if(token){
 			try{
-				const res = await axios.post('https://api-citas-isoft.herokuapp.com/api/citas', datos, {
+				const res = await axios.post('http://localhost:8080/api/calendar', datos, {
 					headers: {
 					'x-token': token
 					}
 				});
-                console.log(res)
+          console.log(res)
 
 				dispatch({
 					type: AGREGAR_CITA,
 					payload: res.data
 				}) 
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Cita agendada con éxito.',
+          showConfirmButton: true,
+          // timer: 1800
+        })
 			}catch(error){
 				console.log(error.response)
 			}
 		}
         else {
-            dispatch({
-                type: AGREGAR_CITA_ERROR
-            }) 
+            // dispatch({
+            //     type: AGREGAR_CITA_ERROR
+            // }) 
+            Swal.fire({
+              icon: 'error',
+              title: 'Debe iniciar sesion primero para poder agendar una cita.',
+              showConfirmButton: true,
+              // timer: 1800
+            })
         }
   }, [])
 

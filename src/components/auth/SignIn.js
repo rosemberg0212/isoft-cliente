@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useAuth} from '../../context/auth/authContext'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 const SignIn = () => {
@@ -10,7 +10,7 @@ const SignIn = () => {
     
   useEffect(() => {
     if (autenticado) {
-      navigate('/')
+      navigate('/reservas')
     }
 
     if (mensaje) {
@@ -82,6 +82,11 @@ const SignIn = () => {
           />
         </div>
         <input type='submit' value='Ingresar' className='ingresar' />
+        <div className='regis'>
+          <hr/>
+          <Link to='/signUp'>¿Aún no tienes una cuante? Regístrate</Link>
+        </div>
+        
       </form>
     </div>
   )

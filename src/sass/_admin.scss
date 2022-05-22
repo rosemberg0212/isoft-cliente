@@ -2,8 +2,9 @@
     display: flex;
     .sidebar{
         width: 14rem;
-        height: 100vh;
+        height: 100%;
         border-right: 1px solid gray;
+        background-color: #ffdc73;
     }
     ul{
         list-style: none;
@@ -12,9 +13,46 @@
         li{
             margin-bottom: 1rem;
 
+            .foto{
+                width: 140px;
+                height: 140px;
+                
+                border-radius: 50%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+
+            p{
+                font-size: 1.2rem;
+            }
+
             a{
                 text-decoration: none;
+                color: black;
+                font-size: 1.2rem;
+                font-weight: bold;
+                
+
+                &:hover{
+                    background-color: aliceblue;
+                    border-radius: 10px;
+                    
+                }
             }
+        }
+    }
+
+    .calendario{
+        margin: auto;
+
+        .title{
+           font-size: 2.8rem;
+           color: #c59506;
         }
     }
 

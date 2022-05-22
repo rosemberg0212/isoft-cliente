@@ -12,13 +12,14 @@ const citasReducer = (state, action)=>{
 		case AGREGAR_CITA:
 			return{
 				...state,
-				cita: action.payload
+				cita: action.payload,
+				
 			}
         
         case AGREGAR_CITA_ERROR:
             return{
                 ...state,
-                mensaje: true
+                mensaje: true,
             }
 
 		case OBTENER_CITA:

@@ -18,12 +18,17 @@
         color: #ffffff;
     }
 
+
     .menu{
         margin-right: 5%;
         .list{
             list-style: none;
             display: flex;
             gap: 25px;
+
+            .user{
+                font-size: 2rem;
+            }
         }
     }
 

@@ -5,7 +5,7 @@ import Markers from './Markers'
 
 const MapView = () => {
   return (
-    <MapContainer center={{lat: '10.42290454582473', lng: '-75.53921549780577'}} zoom={13}>, 
+    <MapContainer center={{lat: '10.421209833559793', lng: '-75.5469451015671'}} zoom={13}>, 
         <TileLayer 
             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

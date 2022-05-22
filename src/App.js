@@ -1,5 +1,6 @@
 import './sass/main.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Reservas from './pages/Reservas'
 import SignIN from './pages/SignIN'
@@ -13,10 +14,16 @@ import Info from './pages/admin/Info'
 import Servicios from './pages/admin/Servicios'
 import Usuarios from './pages/admin/Usuarios'
 
+//user
+import UserHome from './pages/user/UserHome'
+
 //context
 import AuthState from './context/auth/authState'
 import CitasState from './context/citas/citasState'
 
+import Modal from 'react-modal'
+
+Modal.setAppElement('#root');
 
 
 function App() {
@@ -37,6 +44,9 @@ function App() {
             <Route path='/info' element={<Info />} />
             <Route path='/servicios' element={<Servicios />} />
             <Route path='/usuarios' element={<Usuarios />} />
+
+            {/* user */}
+            <Route path='/user' element={<UserHome/>} />
           </Routes>
         </Router>
       </CitasState>

@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
-import Sidebar from '../../components/admin/Sidebar.js'
 import Calendar from '../../components/citas/Calendar.js'
+
+import UserSidebar from '../../components/user/UserSidebar'
 import {useAuth} from '../../context/auth/authContext'
 
-const Admin = () => {
-  const { usuarioAutenticado } = useAuth()
+const UserHome = () => {
+    const { usuarioAutenticado} = useAuth()
 
   useEffect(() => {
     usuarioAutenticado()
   }, [usuarioAutenticado])
   return (
     <div className='content-adm'>
-        <Sidebar/>
+        <UserSidebar/>
         <div className='calendario'>
           <h2 className='title'>Inicio</h2>
           <Calendar/>
@@ -21,4 +22,4 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default UserHome

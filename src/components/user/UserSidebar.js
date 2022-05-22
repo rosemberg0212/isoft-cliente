@@ -1,19 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {AiOutlineHome} from 'react-icons/ai'
-import {FaUserAlt} from 'react-icons/fa'
 import {BsJournalBookmark} from 'react-icons/bs'
-import {RiCustomerService2Fill} from 'react-icons/ri'
-import {MdOutlineMiscellaneousServices} from 'react-icons/md'
 import {FaRegWindowClose} from 'react-icons/fa'
 import {useAuth} from '../../context/auth/authContext';
 import foto from '../../img/user.png'
 
+const UserSidebar = () => {
 
-const Sidebar = () => {
     const {cerrarSesion,autenticado, usuario} = useAuth();
+
+   
   return (
-      <div className='content-sidebar'>
+    <div className='content-sidebar'>
         <ul className='sidebar'>
         <li>
             {autenticado? (
@@ -27,19 +26,10 @@ const Sidebar = () => {
             
         </li>
         <li>
-            <Link to='/admin'><AiOutlineHome/>Incio</Link>
+            <Link to='/user'><AiOutlineHome/>Incio</Link>
         </li>
         <li>
-            <Link to='/usuarios'><FaUserAlt/>Usuarios</Link>
-        </li>
-        <li>
-            <Link to='/citas'><BsJournalBookmark/>Citas</Link>
-        </li>
-        <li>
-            <Link to='/servicios'><RiCustomerService2Fill/>Servicios</Link>
-        </li>
-        <li>
-            <Link to='/info'><MdOutlineMiscellaneousServices/>Info</Link>
+            <Link to='/citasUser'><BsJournalBookmark/>Citas</Link>
         </li>
         <li>
             <Link to='/signIn' onClick={cerrarSesion}><FaRegWindowClose/>Cerrar sesión</Link>
@@ -49,4 +39,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default UserSidebar
