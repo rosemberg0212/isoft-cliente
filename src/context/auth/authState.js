@@ -4,8 +4,8 @@ import AuthReducer from './authReducer'
 import axios from 'axios'
 
 import {
-  // REGISTRO_EXITOSO,
-  // REGISTRO_ERROR,
+  REGISTRO_EXITOSO,
+  REGISTRO_ERROR,
   OBTENER_USUARIO,
   LOGIN_EXITOSO,
   LOGIN_ERROR,
@@ -25,24 +25,7 @@ const INITIAL_STATE = {
 const AuthState = (props) => {
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE)
 
-  //Registrar usuarios
-  const registrarUsuario = useCallback(async (datos) => {
-    // try{
-    // 	const res = await axios.post('https://api-restauran.herokuapp.com/api/usuarios/', datos);
-    // 	console.log(res.data);
-    // 	dispatch({
-    // 		type: REGISTRO_EXITOSO,
-    // 		payload: res.data
-    // 	})
-    // 	usuarioAutenticado()
-    // }catch(error){
-    // 	console.log(error.response.data.errors)
-    // 	dispatch({
-    // 		type: REGISTRO_ERROR,
-    // 		payload: error.response.data.errors
-    // 	})
-    // }
-  }, [])
+  
 
   //Retornar usuario autenticado
   const usuarioAutenticado = useCallback(async () => {
@@ -70,6 +53,25 @@ const AuthState = (props) => {
       }
     }
   }, [])
+
+  //Registrar usuarios
+  const registrarUsuario = useCallback(async (datos) => {
+    try{
+    	const res = await axios.post('https://api-citas-isoft.herokuapp.com/api/usuarios', datos);
+    	console.log(res.data);
+    	dispatch({
+    		type: REGISTRO_EXITOSO,
+    		payload: res.data
+    	})
+    	usuarioAutenticado()
+    }catch(error){
+    	console.log(error.response.data.errors)
+    	dispatch({
+    		type: REGISTRO_ERROR,
+    		payload: error.response.data.errors
+    	})
+    }
+  }, [usuarioAutenticado])
 
   //iniciar sesion
   const iniciarSesion = useCallback(async (datos) => {

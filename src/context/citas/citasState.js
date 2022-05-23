@@ -27,7 +27,7 @@ const CitaState = (props) => {
     const token = getToken()
 		if(token){
 			try{
-				const res = await axios.post('http://localhost:8080/api/calendar', datos, {
+				const res = await axios.post('https://api-citas-isoft.herokuapp.com/api/calendar', datos, {
 					headers: {
 					'x-token': token
 					}
@@ -65,12 +65,12 @@ const CitaState = (props) => {
 //Obtener citas
   const obtenerCitas = useCallback(async ()=>{
       try{
-          const res = await axios.get('https://api-citas-isoft.herokuapp.com/api/citas');
-            console.log(res.data.citas)
+          const res = await axios.get('https://api-citas-isoft.herokuapp.com/api/calendar/car');
+            console.log(res.data)
 
           dispatch({
               type: OBTENER_CITA,
-              payload: res.data.citas
+              payload: res.data
           }) 
       }catch(error){
           console.log(error.response)

@@ -8,8 +8,21 @@ $gris: #b3b3b3;
 $black: #111111;
 $white: #ffffff;
 
+.fondo{
+  height: 400px;
+  width: 800px;
+  margin: auto;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 @import 'signIn';
 @import 'navbar';
 @import 'citas';
 @import 'mapView';
 @import 'admin';
+@import 'table';
+@import 'cardServicio';

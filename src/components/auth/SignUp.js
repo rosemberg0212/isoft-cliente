@@ -1,17 +1,18 @@
-import React, {  useState } from 'react'
-// import {useAuth} from '../../context/auth/authContext'
-import { Link } from 'react-router-dom'
-// import Swal from 'sweetalert2'
+import React, {  useEffect, useState } from 'react'
+import {useAuth} from '../../context/auth/authContext'
+import { Link, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const SignUp = () => {
-  // const { autenticado } = useAuth()
-
-  // let navigate = useNavigate()
     
-  // useEffect(() => {
-  //   if (autenticado) {
-  //     navigate('/')
-  //   }
+    const { autenticado,  registrarUsuario} = useAuth()
+
+  let navigate = useNavigate()
+    
+  useEffect(() => {
+    if (autenticado) {
+      navigate('/reservas')
+    }
 
   //   // if (mensaje) {
   //   //   Swal.fire({
@@ -21,7 +22,7 @@ const SignUp = () => {
   //   //     timer: 1800,
   //   //   })
   //   // }
-  // }, [autenticado, mensaje, navigate])
+  }, [autenticado, navigate])
 
   const [usur, guardarUsuario] = useState({
     nombre: '',
@@ -42,20 +43,32 @@ const SignUp = () => {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    // if (correo.trim() === '' || password.trim() === '') {
-    //   Swal.fire({
-    //     icon: 'error',
-    //     title: 'Todos los campos son obligatorios',
-    //     showConfirmButton: false,
-    //     timer: 1800
-    //   })
-    //   return
-    // }
+    if (correo.trim() === '' || password.trim() === '' || nombre.trim() === '') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Todos los campos son obligatorios',
+        showConfirmButton: false,
+        timer: 1800
+      })
+      return
+    }
 
-    // iniciarSesion({
-    //   correo,
-    //   password,
-    // })
+    if (password.length < 6) {
+      Swal.fire({
+        icon: 'error',
+        title: 'La contraseña debe ser mayor a 5 caracteres',
+        showConfirmButton: false,
+        timer: 1800
+      })
+      return
+    }
+
+    registrarUsuario({
+      correo,
+      password,
+      nombre,
+      celular
+    }) 
   }
   return (
     <div className='content_login'>

@@ -16,12 +16,14 @@ import Usuarios from './pages/admin/Usuarios'
 
 //user
 import UserHome from './pages/user/UserHome'
+import CitaUser from './pages/user/CitasUser'
 
 //context
 import AuthState from './context/auth/authState'
 import CitasState from './context/citas/citasState'
 
 import Modal from 'react-modal'
+
 
 Modal.setAppElement('#root');
 
@@ -47,6 +49,7 @@ function App() {
 
             {/* user */}
             <Route path='/user' element={<UserHome/>} />
+            <Route path='/citasUser' element={<CitaUser/>} />
           </Routes>
         </Router>
       </CitasState>

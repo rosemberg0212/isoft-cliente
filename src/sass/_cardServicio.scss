@@ -1,0 +1,24 @@
+.card-servicios{
+    height: 100vh;
+    width: 1080px;
+    padding: 20px;
+    
+
+    .card-ubica{
+        display: flex;
+        flex-wrap: wrap;
+        .carta{
+            background-color: rgba(245, 189, 106, 0.274);
+            margin: 20px;
+            .war{
+                margin: 5px;
+            }
+
+            .moment{
+                background-color: rgb(247, 181, 144);
+            }
+        }
+    }
+    
+    
+}

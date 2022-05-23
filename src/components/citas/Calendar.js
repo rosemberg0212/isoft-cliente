@@ -22,12 +22,12 @@ const Calendar = () => {
     }
 
     const hadleEventAdd = async (data)=>{
-        const res = await axios.post('http://localhost:8080/api/calendar', data.event)
+        const res = await axios.post('https://api-citas-isoft.herokuapp.com//api/calendar', data.event)
         console.log(res)
     }
 
     const hadleDatesSet = async (data)=>{
-      const res = await axios.get('http://localhost:8080/api/calendar?start='+moment(data.start).toISOString())
+      const res = await axios.get('https://api-citas-isoft.herokuapp.com/api/calendar?start='+moment(data.start).toISOString())
       setEvents(res.data);
       console.log(res.data)
   }
