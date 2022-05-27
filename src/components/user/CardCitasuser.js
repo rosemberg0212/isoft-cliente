@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { useCitas } from '../../context/citas/citasContext'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import ModalEdit from '../modal/Modal'
 import Datetime from 'react-datetime';
+import Modal from '../modal/Modal'
 
 const CardCitasuser = () => {
     const { citasUser, borrarCita, obtenerCitasUser, crearCita } = useCitas()
     const [activeEdit, setactiveEdit] = useState(false)
-
+    const [active, setactive] = useState(false)
 
     const [reservas, guardarReserva] = useState({
+
         title: '',
         descripcion: ''
     })
@@ -34,10 +36,20 @@ const CardCitasuser = () => {
             descripcion
         })
     }
+
+    const onSubmit2 = (e) => {
+        e.preventDefault();
+
+        
+    }
     console.log(citasUser)
     useEffect(() => {
         obtenerCitasUser()
     }, [obtenerCitasUser])
+
+    const toggle = () => {
+        setactive(!active)
+      }
 
     const toggleEdit = () => {
         // resetUser()
@@ -55,9 +67,72 @@ const CardCitasuser = () => {
 
     let results = !search ? citasUser : citasUser.filter((dato) => dato.moment.toLowerCase().includes(search.toLocaleLowerCase()))
 
+    const params = useParams();
+
+    useEffect(() => {
+
+        const encontraU = citasUser.find((cita) => cita._id === params.id)
+        console.log(encontraU)
+        if (encontraU) {
+            guardarReserva(encontraU)
+            setStart(encontraU.start)
+        }
+        // setIditUser(encontraU)
+    }, [params, citasUser])
 
     return (
         <div className='card-servicios'>
+
+            <Modal active={active} toggleEdit={toggle}>
+                <form className='content-modal' onSubmit={onSubmit2}>
+                    <h2>Editar cita</h2>
+                    <div className=''>
+                        <div className=' orga'>
+                            <label>Servicio(*)</label>
+                            <select className='inputs ' name='title' value={title} onChange={onChange}>
+                                <option>Selecciona una opción</option>
+                                <optgroup label='CORTES Y BLOWER'>
+                                    <option>Corte</option>
+                                    <option>Corte + Blower</option>
+                                    <option>Peinado + Blower</option>
+                                    <option>Retoque + Blower</option>
+                                    <option>Flequillo + Blower</option>
+                                    <option>Flequillo</option>
+                                    <option>Recogidos</option>
+                                    <option>Arreglo de barba(máquina)</option>
+                                    <option>Arreglo de barba(paño-cuchilla-forma)</option>
+                                    <option>Shampo</option>
+                                </optgroup>
+                                <optgroup label='Manicure y Pedicure'>
+                                    <option>Retoque + Blower</option>
+                                    <option>Manicure</option>
+                                    <option>Hidratación Parafina Manos</option>
+                                    <option>Cambio de esmalte</option>
+                                    <option>Manicure SPA</option>
+                                    <option>Manicure Semipermanente(Pies o Manos)</option>
+                                    <option>Maquillaje Encima Semipermanente(solo Pintado)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div className='fecha orga'>
+                            <label>Fecha y Hora para el servicio (*)</label>
+                            {/* <input 
+                        type='datetime-local' 
+                        className='campoF' 
+                        min={fechaA} 
+                        name='fecha'
+                        value={fecha}
+                        onChange={onChange}
+                    /> */}
+                            <Datetime value={start} onChange={date => setStart(date)} />
+                        </div>
+                    </div>
+
+                    <input type='submit' name='enviar' className='ingresar' value='Editar' />
+                </form>
+            </Modal>
+
             <ModalEdit active={activeEdit} toggleEdit={toggleEdit}>
                 <form className='content-modal' onSubmit={onSubmit}>
                     <h2>Registrar nueva cita</h2>
@@ -114,8 +189,6 @@ const CardCitasuser = () => {
                             />
                         </div>
                     </div>
-
-
                     <input type='submit' name='enviar' className='ingresar' value='Crear' />
                 </form>
             </ModalEdit>
@@ -140,7 +213,7 @@ const CardCitasuser = () => {
                                 Usuario: {cita.usuario.nombre}
                             </Card.Text>
                             <Link to={`/citasUser/${cita._id}`} className='btn-editar'>
-                                <Button variant="warning" >Editar</Button>{' '}
+                                <Button variant="warning" onClick={toggle} >Editar</Button>{' '}
                             </Link>
 
                             <Button variant="danger" onClick={() => borrarCita(cita._id)}>Borrar</Button>
