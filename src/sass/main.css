@@ -16,6 +16,15 @@
      object-fit: cover;
 }
 
+.coment {
+  margin-bottom: 10px;
+  height: 40px;
+  width: 250px;
+  border-radius: 8px;
+  border: solid 1px gray;
+  padding: 5px;
+}
+
 .content_login {
   width: 35%;
   height: 500px;
@@ -175,6 +184,7 @@
 
 .content-adm {
   display: flex;
+  height: 100%;
 }
 .content-adm .sidebar {
   width: 14rem;
@@ -216,6 +226,8 @@
 }
 .content-adm .calendario {
   margin: auto;
+  height: 100%;
+  width: 100%;
 }
 .content-adm .calendario .title {
   font-size: 2.8rem;
@@ -224,16 +236,31 @@
 
 .content-tabla {
   height: 100vh;
-  width: 1000px;
-  margin: 30px;
+  width: 100%;
+  margin: 0 3%;
 }
 .content-tabla .table {
   margin-top: 10px;
+  width: 100%;
+}
+.content-tabla .table .btn-editar {
+  text-decoration: none;
+}
+.content-tabla .buscador {
+  margin: 20px 0;
+}
+.content-tabla .buscador .search {
+  margin-left: 8px;
+  height: 40px;
+  width: 250px;
+  border-radius: 8px;
+  border: solid 1px gray;
+  padding: 5px;
 }
 
 .card-servicios {
   height: 100vh;
-  width: 1080px;
+  width: 100%;
   padding: 20px;
 }
 .card-servicios .card-ubica {
@@ -249,4 +276,89 @@
 }
 .card-servicios .card-ubica .carta .moment {
   background-color: rgb(247, 181, 144);
+}
+.card-servicios .card-ubica .carta a {
+  text-decoration: none;
+}
+.card-servicios .buscador .search {
+  margin-left: 8px;
+  height: 40px;
+  width: 250px;
+  border-radius: 8px;
+  border: solid 1px gray;
+  padding: 5px;
+}
+.card-servicios .buscador label {
+  font-size: 1.3rem;
+}
+
+.content-modal {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content-modal p {
+  font-size: 1.5rem;
+}
+.content-modal .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.content-modal .inputs input {
+  margin: 15px 0;
+  margin-left: 8px;
+  height: 40px;
+  width: 250px;
+  border-radius: 8px;
+  border: solid 1px gray;
+  padding: 5px;
+}
+.content-modal .ingresar {
+  border: none;
+  width: 120px;
+  height: 35px;
+  background-color: #ffdc73;
+  border-radius: 8px;
+  color: #111111;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.content-modal-citas {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content-modal-citas .ubica {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.content-modal-citas .inputs {
+  margin: 15px 0;
+  margin-left: 8px;
+  height: 40px;
+  width: 250px;
+  border-radius: 8px;
+  border: solid 1px gray;
+  padding: 5px;
+}
+.content-modal-citas .ingresar {
+  border: none;
+  width: 120px;
+  height: 35px;
+  background-color: #ffdc73;
+  border-radius: 8px;
+  color: #111111;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.content-sidebarUser .sidebar {
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */

@@ -1,5 +1,6 @@
 .content-adm{
     display: flex;
+    height: 100%;
     .sidebar{
         width: 14rem;
         height: 100%;
@@ -49,7 +50,8 @@
 
     .calendario{
         margin: auto;
-
+        height: 100%;
+        width: 100%;
         .title{
            font-size: 2.8rem;
            color: #c59506;

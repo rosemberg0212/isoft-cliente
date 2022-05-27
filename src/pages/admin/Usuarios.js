@@ -5,11 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useAuth} from '../../context/auth/authContext'
 
 const Usuarios = () => {
-  const { usuarioAutenticado } = useAuth()
+  const { usuarioAutenticado, getUsuarios } = useAuth()
   
   useEffect(() => {
     usuarioAutenticado()
-  }, [usuarioAutenticado])
+    getUsuarios()
+  }, [usuarioAutenticado, getUsuarios])
   return (
     <div className='content-adm'>
         <Sidebar/>

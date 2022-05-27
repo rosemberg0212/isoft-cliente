@@ -12,7 +12,7 @@ const UserSidebar = () => {
 
    
   return (
-    <div className='content-sidebar'>
+    <div className='content-sidebarUser'>
         <ul className='sidebar'>
         <li>
             {autenticado? (

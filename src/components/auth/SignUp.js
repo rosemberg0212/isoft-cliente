@@ -119,7 +119,7 @@ const SignUp = () => {
             onChange={onChange}
           />
         </div>
-        <input type='submit' value='Ingresar' className='ingresar' />
+        <input type='submit' value='Registrar' className='ingresar' />
         <div className='regis'>
           <hr/>
           <Link to='/signIn'>¿Ya tienes una cuenta? Inicia Sesión</Link>

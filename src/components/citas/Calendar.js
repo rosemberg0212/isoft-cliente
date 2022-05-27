@@ -38,7 +38,7 @@ const Calendar = () => {
     <div>
     {/* <button onClick={()=>setmodalOpen(true)}>Add</button> */}
     
-    <div style={{width: '1090px'}}>
+    <div style={{width: '90%'}}>
     <FullCalendar
             
             ref={calendarRef}

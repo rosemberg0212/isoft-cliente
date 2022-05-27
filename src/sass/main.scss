@@ -7,6 +7,7 @@
 $gris: #b3b3b3;
 $black: #111111;
 $white: #ffffff;
+$principal: #ffdc73;
 
 .fondo{
   height: 400px;
@@ -19,6 +20,16 @@ $white: #ffffff;
   }
 }
 
+.coment{
+            margin-bottom: 10px;
+            height: 40px ;
+            width: 250px;
+            border-radius: 8px;
+            border: solid 1px gray;
+            padding: 5px;
+}
+
+
 @import 'signIn';
 @import 'navbar';
 @import 'citas';
@@ -26,3 +37,6 @@ $white: #ffffff;
 @import 'admin';
 @import 'table';
 @import 'cardServicio';
+@import 'contenidoModal';
+@import 'content-modal-citas';
+@import 'content-sidebarUser';

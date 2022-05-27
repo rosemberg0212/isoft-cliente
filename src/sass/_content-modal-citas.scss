@@ -1,0 +1,33 @@
+.content-modal-citas{
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .ubica{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .inputs{
+            margin: 15px 0;
+            margin-left: 8px;
+            height: 40px ;
+            width: 250px;
+            border-radius: 8px;
+            border: solid 1px gray;
+            padding: 5px;
+    }
+
+    .ingresar{
+        border: none;
+        width: 120px;
+        height: 35px;
+        background-color: $principal;
+        border-radius: 8px;
+        color: $black;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+}

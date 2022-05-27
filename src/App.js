@@ -43,13 +43,16 @@ function App() {
             {/* admin */}
             <Route path='/admin' element={<Admin />} />
             <Route path='/citas' element={<Citas />} />
+            <Route path='/citas/:id' element={<Citas />} />
             <Route path='/info' element={<Info />} />
             <Route path='/servicios' element={<Servicios />} />
             <Route path='/usuarios' element={<Usuarios />} />
+            <Route path='/usuarios/:id' element={<Usuarios />} />
 
             {/* user */}
             <Route path='/user' element={<UserHome/>} />
             <Route path='/citasUser' element={<CitaUser/>} />
+            <Route path='/citasUser/:id' element={<CitaUser/>} />
           </Routes>
         </Router>
       </CitasState>

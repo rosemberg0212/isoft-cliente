@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import CardCitas from '../../components/admin/CardCitas'
+import CardCitasuser from '../../components/user/CardCitasuser'
 import UserSidebar from '../../components/user/UserSidebar'
 import {useAuth} from '../../context/auth/authContext'
 
@@ -12,7 +12,7 @@ const  CitaUser = () => {
     return (
       <div className='content-adm'>
           <UserSidebar/>
-          <div><CardCitas/></div>
+          <div><CardCitasuser/></div>
       </div>
     )
 }
