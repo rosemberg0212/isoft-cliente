@@ -8,25 +8,27 @@ $gris: #b3b3b3;
 $black: #111111;
 $white: #ffffff;
 $principal: #ffdc73;
+$footer: #222222;
 
-.fondo{
+.fondo {
   height: 400px;
   width: 800px;
   margin: auto;
-  img{
+
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
 
-.coment{
-            margin-bottom: 10px;
-            height: 40px ;
-            width: 250px;
-            border-radius: 8px;
-            border: solid 1px gray;
-            padding: 5px;
+.coment {
+  margin-bottom: 10px;
+  height: 40px;
+  width: 250px;
+  border-radius: 8px;
+  border: solid 1px gray;
+  padding: 5px;
 }
 
 
@@ -40,3 +42,4 @@ $principal: #ffdc73;
 @import 'contenidoModal';
 @import 'content-modal-citas';
 @import 'content-sidebarUser';
+@import 'footer';

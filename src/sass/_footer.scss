@@ -1,0 +1,32 @@
+.footer {
+    width: 100%;
+    height: 100%;
+    background-color: $footer;
+    color: $white;
+    padding: 15px 0;
+
+    .content-footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+
+        .logo {
+            margin-left: 20%;
+
+            .redes {
+                font-size: 2.4rem;
+
+                .face {
+                    margin: 0 10px;
+                }
+            }
+        }
+
+    }
+
+    .copy {
+        width: 100%;
+        margin-left: 7%;
+        margin-top: 20px;
+    }
+}

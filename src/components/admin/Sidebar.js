@@ -36,7 +36,7 @@ const Sidebar = () => {
             <Link to='/citas'><BsJournalBookmark/>Citas</Link>
         </li>
         <li>
-            <Link to='/servicios'><RiCustomerService2Fill/>Servicios</Link>
+            <Link to='/servicios-admin'><RiCustomerService2Fill/>Servicios</Link>
         </li>
         <li>
             <Link to='/info'><MdOutlineMiscellaneousServices/>Info</Link>

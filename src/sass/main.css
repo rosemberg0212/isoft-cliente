@@ -235,7 +235,7 @@
 }
 
 .content-tabla {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   margin: 0 3%;
 }
@@ -259,7 +259,7 @@
 }
 
 .card-servicios {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   padding: 20px;
 }
@@ -361,4 +361,30 @@
 
 .content-sidebarUser .sidebar {
   height: 100%;
+}
+
+.footer {
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 15px 0;
+}
+.footer .content-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.footer .content-footer .logo {
+  margin-left: 20%;
+}
+.footer .content-footer .logo .redes {
+  font-size: 2.4rem;
+}
+.footer .content-footer .logo .redes .face {
+  margin: 0 10px;
+}
+.footer .copy {
+  width: 100%;
+  margin-left: 7%;
+  margin-top: 20px;
 }/*# sourceMappingURL=main.css.map */
