@@ -33,6 +33,7 @@ const Footer = () => {
             <div className='copy'>
                 <p>&copy; Copyright 2022   |   Todos los Derechos Reservados   |   Desarrollado por elRous</p>
                 <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Flat Icons - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/comb" title="comb icons">Comb icons created by Freepik - Flaticon</a>
             </div>
         </div>
     )

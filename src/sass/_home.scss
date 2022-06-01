@@ -1,0 +1,70 @@
+.fondo {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/barber-g8bb7d7f0b_1920.jpg');
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .titulo {
+        width: 40%;
+        position: absolute;
+        top: 15%;
+        left: 10%;
+
+        p {
+            color: $white;
+            font-size: 4rem;
+        }
+
+        button {
+            width: 300px;
+            height: 60px;
+            border: solid 1px $principal;
+            background-color: transparent;
+            color: $principal;
+            border-radius: 4px;
+            font-size: 1.3rem;
+            transition: 0.7s;
+
+            &:hover {
+                background-color: $principal;
+                color: $black;
+            }
+        }
+    }
+}
+
+.nosotros{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $principal;
+
+    .presentacion{
+        font-size: 2rem;
+        text-align: left;
+        padding: 10px;
+        p{
+            width: 90%;
+            letter-spacing: normal;
+            line-height: 38.4px;
+        }
+    }
+
+    .equipo{
+        text-align: center;
+        padding: 10px;
+        letter-spacing: normal;
+
+        .title{
+            font-size: 3.9rem;
+            line-height: 50.4px;
+        }
+
+        .descrip{
+            text-align: justify;
+        }
+    }
+}
