@@ -396,6 +396,7 @@
 .fondo .titulo p {
   color: #ffffff;
   font-size: 4rem;
+  line-height: 65px;
 }
 .fondo .titulo button {
   width: 300px;
@@ -439,4 +440,55 @@
 }
 .nosotros .equipo .descrip {
   text-align: justify;
+}
+
+.content-listaServicio {
+  width: 100%;
+  height: 100%;
+  padding: 6%;
+}
+.content-listaServicio .title {
+  font-size: 3.8rem;
+}
+.content-listaServicio .flex-c {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  justify-content: center;
+}
+
+.service {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.service:hover {
+  transform: scale(1.15);
+}
+.service img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(50%);
+}
+.service .text {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+}
+.service .text .cecy {
+  font-size: 1.8rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.747);
+}
+.service .text .nombre {
+  font-size: 2.9rem;
+  margin: 0;
+  margin-top: -14px;
+  color: #ffdc73;
 }/*# sourceMappingURL=main.css.map */

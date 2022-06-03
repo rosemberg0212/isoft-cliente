@@ -1,8 +1,11 @@
 import React from 'react'
+import ListaServicios from '../components/servicios/ListaServicios'
 
 const Servicios = () => {
   return (
-    <div>Servicios</div>
+    <div>
+      <ListaServicios/>
+    </div>
   )
 }
 

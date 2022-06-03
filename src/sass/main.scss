@@ -9,6 +9,7 @@ $black: #111111;
 $white: #ffffff;
 $principal: #ffdc73;
 $footer: #222222;
+$blanco-opaco: rgba(255, 255, 255, 0.747);
 
 .coment {
   margin-bottom: 10px;
@@ -32,3 +33,4 @@ $footer: #222222;
 @import 'content-sidebarUser';
 @import 'footer';
 @import 'home';
+@import 'servicios';

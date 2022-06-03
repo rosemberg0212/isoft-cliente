@@ -23,6 +23,7 @@ import CitaUser from './pages/user/CitasUser'
 //context
 import AuthState from './context/auth/authState'
 import CitasState from './context/citas/citasState'
+import ServicesState from './context/services/servicesState'
 
 import Modal from 'react-modal'
 
@@ -34,31 +35,33 @@ function App() {
   return (
     <AuthState>
       <CitasState>
-        <Router>
-          <Navbar/>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/servicios' element={<Servicios />} />
-            <Route path='/reservas' element={<Reservas />} />
-            <Route path='/signIn' element={<SignIN />} />
-            <Route path='/signUp' element={<SignUP />} />
+        <ServicesState>
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/servicios' element={<Servicios />} />
+              <Route path='/reservas' element={<Reservas />} />
+              <Route path='/signIn' element={<SignIN />} />
+              <Route path='/signUp' element={<SignUP />} />
 
-            {/* admin */}
-            <Route path='/admin' element={<Admin />} />
-            <Route path='/citas' element={<Citas />} />
-            <Route path='/citas/:id' element={<Citas />} />
-            <Route path='/info' element={<Info />} />
-            <Route path='/servicios-admin' element={<ServiciosAdmin />} />
-            <Route path='/usuarios' element={<Usuarios />} />
-            <Route path='/usuarios/:id' element={<Usuarios />} />
+              {/* admin */}
+              <Route path='/admin' element={<Admin />} />
+              <Route path='/citas' element={<Citas />} />
+              <Route path='/citas/:id' element={<Citas />} />
+              <Route path='/info' element={<Info />} />
+              <Route path='/servicios-admin' element={<ServiciosAdmin />} />
+              <Route path='/usuarios' element={<Usuarios />} />
+              <Route path='/usuarios/:id' element={<Usuarios />} />
 
-            {/* user */}
-            <Route path='/user' element={<UserHome/>} />
-            <Route path='/citasUser' element={<CitaUser/>} />
-            <Route path='/citasUser/:id' element={<CitaUser/>} />
-          </Routes>
-          <Footer/>
-        </Router>
+              {/* user */}
+              <Route path='/user' element={<UserHome />} />
+              <Route path='/citasUser' element={<CitaUser />} />
+              <Route path='/citasUser/:id' element={<CitaUser />} />
+            </Routes>
+            <Footer />
+          </Router>
+        </ServicesState>
       </CitasState>
     </AuthState>
   )
