@@ -4,7 +4,7 @@ import ModalEdit from '../modal/Modal'
 import {  useService } from '../../context/services/serviceContext'
 
 const CardServicios = () => {
-    const {servicios, obtenerServicios, crearServicio} = useService();
+    const { obtenerServicios, crearServicio} = useService();
     useEffect(() => {
         obtenerServicios()
     }, [obtenerServicios])
